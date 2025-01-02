@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Query;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Api.Api.Repositories
+namespace Api.Persistence.Repositories
 {
     public class ReadRepository<T> : IReadRepository<T> where T : class, IEntityBase, new()
     {
