@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Api.Domain.Entities
 {
-    internal class Product:EntityBase
+    public class Product:EntityBase
     {
         public required string  Title { get; set; }
         public required string Description { get; set; }

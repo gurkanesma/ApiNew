@@ -1,18 +1,13 @@
-﻿using Bogus;
-using DocumentFormat.OpenXml.Bibliography;
+﻿using Api.Domain.Entities;
+using Bogus;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Api.Persistence.Configurations
 {
     internal class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
-        public void Configure(EntityTypeBuilder<Product>builder )
+        public void Configure(EntityTypeBuilder<Product> builder)
         {
             Faker faker = new("tr");
 
