@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163 d17.12
+VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{586EC061-940A-48C1-8D03-4524B7952567}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Persistence", "Infrastructure\Api.Persistence\Api.Persistence.csproj", "{EC440C6F-E146-4CC5-99F3-9125BBC5E85C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Api", "Presentation\Api.Api\Api.Api.csproj", "{05245EB6-BB33-446E-9568-9DB5D5453E61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Mapper", "Api.Mapper\Api.Mapper.csproj", "{C6931BCB-24AA-487C-AF93-BEF5B04AE1A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{05245EB6-BB33-446E-9568-9DB5D5453E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05245EB6-BB33-446E-9568-9DB5D5453E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05245EB6-BB33-446E-9568-9DB5D5453E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6931BCB-24AA-487C-AF93-BEF5B04AE1A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6931BCB-24AA-487C-AF93-BEF5B04AE1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6931BCB-24AA-487C-AF93-BEF5B04AE1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6931BCB-24AA-487C-AF93-BEF5B04AE1A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +61,6 @@ Global
 		{402953E7-F838-4181-A28D-E0E2A4EA5BEA} = {EADAE62D-C2FA-4353-B322-3D922E21AB09}
 		{EC440C6F-E146-4CC5-99F3-9125BBC5E85C} = {EADAE62D-C2FA-4353-B322-3D922E21AB09}
 		{05245EB6-BB33-446E-9568-9DB5D5453E61} = {A2925360-7BF8-4273-B9DD-92BB4813DABF}
+		{C6931BCB-24AA-487C-AF93-BEF5B04AE1A3} = {586EC061-940A-48C1-8D03-4524B7952567}
 	EndGlobalSection
 EndGlobal

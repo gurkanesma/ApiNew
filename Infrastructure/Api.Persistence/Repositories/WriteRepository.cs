@@ -31,7 +31,7 @@ namespace Api.Persistence.Repositories
         }
         public async Task<T> UpdateAsync(T entity)
         {
-            await Task.Run(() => Table.Update(entity));
+            await Task.Run(() => Table.Update(entity)); //Task.Run ile işlem bir arka planda yapılır.
             return entity;
         }
 
