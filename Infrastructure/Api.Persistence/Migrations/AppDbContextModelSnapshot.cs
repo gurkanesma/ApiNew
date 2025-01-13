@@ -49,23 +49,23 @@ namespace Api.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 60, DateTimeKind.Local).AddTicks(6338),
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 430, DateTimeKind.Local).AddTicks(1440),
                             IsDeleted = false,
-                            Name = "Tools"
+                            Name = "Baby"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 60, DateTimeKind.Local).AddTicks(9017),
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 430, DateTimeKind.Local).AddTicks(1779),
                             IsDeleted = false,
-                            Name = "Sports, Outdoors & Jewelery"
+                            Name = "Jewelery"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 60, DateTimeKind.Local).AddTicks(9055),
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 430, DateTimeKind.Local).AddTicks(7074),
                             IsDeleted = true,
-                            Name = "Games"
+                            Name = "Electronics & Books"
                         });
                 });
 
@@ -101,7 +101,7 @@ namespace Api.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 61, DateTimeKind.Local).AddTicks(8782),
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 431, DateTimeKind.Local).AddTicks(9396),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -110,7 +110,7 @@ namespace Api.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 61, DateTimeKind.Local).AddTicks(8787),
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 431, DateTimeKind.Local).AddTicks(9399),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -119,7 +119,7 @@ namespace Api.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 61, DateTimeKind.Local).AddTicks(8789),
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 431, DateTimeKind.Local).AddTicks(9401),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -128,7 +128,7 @@ namespace Api.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 61, DateTimeKind.Local).AddTicks(8791),
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 431, DateTimeKind.Local).AddTicks(9402),
                             IsDeleted = false,
                             Name = "Kadın",
                             ParentId = 2,
@@ -172,17 +172,17 @@ namespace Api.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 72, DateTimeKind.Local).AddTicks(3514),
-                            Description = "Dolorem çakıl illo duyulmamış ea.",
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 446, DateTimeKind.Local).AddTicks(9123),
+                            Description = "Koyun eum praesentium accusantium velit.",
                             IsDeleted = false,
-                            Title = "Dolorem."
+                            Title = "Şafak."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 72, DateTimeKind.Local).AddTicks(3553),
-                            Description = "Cesurca eaque nisi iure sunt.",
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 446, DateTimeKind.Local).AddTicks(9180),
+                            Description = "Voluptatem beğendim türemiş çorba ki.",
                             IsDeleted = true,
                             Title = "Voluptatem."
                         },
@@ -190,10 +190,10 @@ namespace Api.Persistence.Migrations
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 72, DateTimeKind.Local).AddTicks(3573),
-                            Description = "Yazın voluptatum totam ekşili orta.",
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 446, DateTimeKind.Local).AddTicks(9207),
+                            Description = "Commodi dolorem quaerat kalemi sıradanlıktan.",
                             IsDeleted = false,
-                            Title = "Adipisci."
+                            Title = "Qui."
                         });
                 });
 
@@ -239,39 +239,39 @@ namespace Api.Persistence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 74, DateTimeKind.Local).AddTicks(7927),
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Discount = 4.409222960949750m,
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 457, DateTimeKind.Local).AddTicks(7926),
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Discount = 1.337324117420530m,
                             IsDeleted = false,
-                            Price = 831.83m,
-                            Title = "Refined Granite Sausages"
+                            Price = 982.65m,
+                            Title = "Tasty Fresh Car"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedDate = new DateTime(2025, 1, 2, 10, 43, 33, 74, DateTimeKind.Local).AddTicks(7994),
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Discount = 2.565496533563440m,
+                            CreatedDate = new DateTime(2025, 1, 10, 16, 23, 37, 457, DateTimeKind.Local).AddTicks(8262),
+                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            Discount = 3.008597045030270m,
                             IsDeleted = false,
-                            Price = 186.13m,
-                            Title = "Licensed Metal Gloves"
+                            Price = 312.59m,
+                            Title = "Fantastic Fresh Hat"
                         });
                 });
 
-            modelBuilder.Entity("CategoryProduct", b =>
+            modelBuilder.Entity("Api.Domain.Entities.ProductCategory", b =>
                 {
-                    b.Property<int>("CategoriesId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductsId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.HasKey("CategoriesId", "ProductsId");
+                    b.HasKey("ProductId", "CategoryId");
 
-                    b.HasIndex("ProductsId");
+                    b.HasIndex("CategoryId");
 
-                    b.ToTable("CategoryProduct");
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("Api.Domain.Entities.Detail", b =>
@@ -296,24 +296,35 @@ namespace Api.Persistence.Migrations
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("CategoryProduct", b =>
+            modelBuilder.Entity("Api.Domain.Entities.ProductCategory", b =>
                 {
-                    b.HasOne("Api.Domain.Entities.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
+                    b.HasOne("Api.Domain.Entities.Category", "Category")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Api.Domain.Entities.Product", "Product")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Api.Domain.Entities.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Api.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Details");
+
+                    b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("Api.Domain.Entities.Product", b =>
+                {
+                    b.Navigation("ProductCategories");
                 });
 #pragma warning restore 612, 618
         }

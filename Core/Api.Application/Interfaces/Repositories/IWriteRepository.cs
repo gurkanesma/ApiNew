@@ -16,6 +16,10 @@ namespace Api.Application.Interfaces.Repositories
         Task<T> UpdateAsync(T entity);
 
         Task HardDeleteAsync(T entity);//veriyi komple silmek
+        Task HardDeleteRangeAsync(IList<T> entity);//veriyi komple silmek
+
+
+
 
     }
 }

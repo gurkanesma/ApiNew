@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Api.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -94,24 +94,24 @@ namespace Api.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CategoryProduct",
+                name: "ProductCategories",
                 columns: table => new
                 {
-                    CategoriesId = table.Column<int>(type: "int", nullable: false),
-                    ProductsId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CategoryProduct", x => new { x.CategoriesId, x.ProductsId });
+                    table.PrimaryKey("PK_ProductCategories", x => new { x.ProductId, x.CategoryId });
                     table.ForeignKey(
-                        name: "FK_CategoryProduct_Categories_CategoriesId",
-                        column: x => x.CategoriesId,
+                        name: "FK_ProductCategories_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CategoryProduct_Products_ProductsId",
-                        column: x => x.ProductsId,
+                        name: "FK_ProductCategories_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -122,9 +122,9 @@ namespace Api.Persistence.Migrations
                 columns: new[] { "Id", "CreatedDate", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 1, 2, 10, 43, 33, 60, DateTimeKind.Local).AddTicks(6338), false, "Tools" },
-                    { 2, new DateTime(2025, 1, 2, 10, 43, 33, 60, DateTimeKind.Local).AddTicks(9017), false, "Sports, Outdoors & Jewelery" },
-                    { 3, new DateTime(2025, 1, 2, 10, 43, 33, 60, DateTimeKind.Local).AddTicks(9055), true, "Games" }
+                    { 1, new DateTime(2025, 1, 10, 16, 23, 37, 430, DateTimeKind.Local).AddTicks(1440), false, "Baby" },
+                    { 2, new DateTime(2025, 1, 10, 16, 23, 37, 430, DateTimeKind.Local).AddTicks(1779), false, "Jewelery" },
+                    { 3, new DateTime(2025, 1, 10, 16, 23, 37, 430, DateTimeKind.Local).AddTicks(7074), true, "Electronics & Books" }
                 });
 
             migrationBuilder.InsertData(
@@ -132,10 +132,10 @@ namespace Api.Persistence.Migrations
                 columns: new[] { "Id", "CreatedDate", "IsDeleted", "Name", "ParentId", "Priorty" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 1, 2, 10, 43, 33, 61, DateTimeKind.Local).AddTicks(8782), false, "Elektrik", 0, 1 },
-                    { 2, new DateTime(2025, 1, 2, 10, 43, 33, 61, DateTimeKind.Local).AddTicks(8787), false, "Moda", 0, 2 },
-                    { 3, new DateTime(2025, 1, 2, 10, 43, 33, 61, DateTimeKind.Local).AddTicks(8789), false, "Bilgisayar", 1, 1 },
-                    { 4, new DateTime(2025, 1, 2, 10, 43, 33, 61, DateTimeKind.Local).AddTicks(8791), false, "Kadın", 2, 1 }
+                    { 1, new DateTime(2025, 1, 10, 16, 23, 37, 431, DateTimeKind.Local).AddTicks(9396), false, "Elektrik", 0, 1 },
+                    { 2, new DateTime(2025, 1, 10, 16, 23, 37, 431, DateTimeKind.Local).AddTicks(9399), false, "Moda", 0, 2 },
+                    { 3, new DateTime(2025, 1, 10, 16, 23, 37, 431, DateTimeKind.Local).AddTicks(9401), false, "Bilgisayar", 1, 1 },
+                    { 4, new DateTime(2025, 1, 10, 16, 23, 37, 431, DateTimeKind.Local).AddTicks(9402), false, "Kadın", 2, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -143,9 +143,9 @@ namespace Api.Persistence.Migrations
                 columns: new[] { "Id", "CategoryId", "CreatedDate", "Description", "IsDeleted", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2025, 1, 2, 10, 43, 33, 72, DateTimeKind.Local).AddTicks(3514), "Dolorem çakıl illo duyulmamış ea.", false, "Dolorem." },
-                    { 2, 3, new DateTime(2025, 1, 2, 10, 43, 33, 72, DateTimeKind.Local).AddTicks(3553), "Cesurca eaque nisi iure sunt.", true, "Voluptatem." },
-                    { 3, 4, new DateTime(2025, 1, 2, 10, 43, 33, 72, DateTimeKind.Local).AddTicks(3573), "Yazın voluptatum totam ekşili orta.", false, "Adipisci." }
+                    { 1, 1, new DateTime(2025, 1, 10, 16, 23, 37, 446, DateTimeKind.Local).AddTicks(9123), "Koyun eum praesentium accusantium velit.", false, "Şafak." },
+                    { 2, 3, new DateTime(2025, 1, 10, 16, 23, 37, 446, DateTimeKind.Local).AddTicks(9180), "Voluptatem beğendim türemiş çorba ki.", true, "Voluptatem." },
+                    { 3, 4, new DateTime(2025, 1, 10, 16, 23, 37, 446, DateTimeKind.Local).AddTicks(9207), "Commodi dolorem quaerat kalemi sıradanlıktan.", false, "Qui." }
                 });
 
             migrationBuilder.InsertData(
@@ -153,18 +153,18 @@ namespace Api.Persistence.Migrations
                 columns: new[] { "Id", "BrandId", "CreatedDate", "Description", "Discount", "IsDeleted", "Price", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2025, 1, 2, 10, 43, 33, 74, DateTimeKind.Local).AddTicks(7927), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", 4.409222960949750m, false, 831.83m, "Refined Granite Sausages" },
-                    { 2, 3, new DateTime(2025, 1, 2, 10, 43, 33, 74, DateTimeKind.Local).AddTicks(7994), "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients", 2.565496533563440m, false, 186.13m, "Licensed Metal Gloves" }
+                    { 1, 1, new DateTime(2025, 1, 10, 16, 23, 37, 457, DateTimeKind.Local).AddTicks(7926), "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", 1.337324117420530m, false, 982.65m, "Tasty Fresh Car" },
+                    { 2, 3, new DateTime(2025, 1, 10, 16, 23, 37, 457, DateTimeKind.Local).AddTicks(8262), "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design", 3.008597045030270m, false, 312.59m, "Fantastic Fresh Hat" }
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CategoryProduct_ProductsId",
-                table: "CategoryProduct",
-                column: "ProductsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Details_CategoryId",
                 table: "Details",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCategories_CategoryId",
+                table: "ProductCategories",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
@@ -177,16 +177,16 @@ namespace Api.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CategoryProduct");
-
-            migrationBuilder.DropTable(
                 name: "Details");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "ProductCategories");
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Brands");
