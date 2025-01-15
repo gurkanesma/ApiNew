@@ -17,6 +17,7 @@ namespace Api.Application.Features.Products.Command.UpdateProduct
         public UpdateProductCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
+            this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
 

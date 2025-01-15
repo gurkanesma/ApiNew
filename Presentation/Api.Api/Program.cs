@@ -1,6 +1,7 @@
 using Api.Persistence;
 using Api.Application;
 using Api.Mapper;
+using Api.Application.Exceptions;
 
 
 
@@ -26,7 +27,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.ConfigureExceptionHandLingMiddleware();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
