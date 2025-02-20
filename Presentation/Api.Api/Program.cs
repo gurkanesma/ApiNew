@@ -2,6 +2,9 @@ using Api.Persistence;
 using Api.Application;
 using Api.Mapper;
 using Api.Application.Exceptions;
+using Api.Persistence.Context;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 
 
@@ -15,11 +18,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddPersistence(builder.Configuration); //sdsssdfsdsd
+builder.Services.AddPersistence(builder.Configuration); //
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

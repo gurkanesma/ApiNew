@@ -1,20 +1,18 @@
 ﻿using Api.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Api.Persistence.Context
 {
-    public class AppDbContext : DbContext  
+    public class AppDbContext : IdentityDbContext<User, Role, Guid>
     {
         public AppDbContext () { }
 
-        public AppDbContext(DbContextOptions options) : base(options) { }   
+        public  AppDbContext(DbContextOptions options) : base(options) 
+        {
+        }   
 
         public DbSet<Brand> Brands { get; set; }
 
