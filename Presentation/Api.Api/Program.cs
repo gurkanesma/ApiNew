@@ -1,12 +1,8 @@
-using Api.Persistence;
 using Api.Application;
-using Api.Mapper;
 using Api.Application.Exceptions;
-using Api.Persistence.Context;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-
-
+using Api.Mapper;
+using Api.Infrastructure;
+using Api.Persistence;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +14,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddPersistence(builder.Configuration); //
+builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);//
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
