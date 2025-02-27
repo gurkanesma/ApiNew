@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Logging;
 using System.Reflection;
 
 namespace Api.Persistence.Context
@@ -14,14 +15,14 @@ namespace Api.Persistence.Context
         {
         }   
 
-        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Brand>? Brands { get; set; }
 
-         public DbSet<Detail> Details { get; set; }
+         public DbSet<Detail>? Details { get; set; }
         
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Category>? Categories { get; set; }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Product>? Products { get; set; }
+        public DbSet<ProductCategory>? ProductCategories { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -33,8 +34,11 @@ namespace Api.Persistence.Context
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.ConfigureWarnings(warnings =>
-                warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+            optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore());
+
+            //optionsBuilder.ConfigureWarnings(warnings =>
+            ////LogLevel logLevel = LogLevel.Warning;
+            // warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
         }
-    }
+    } 
 }

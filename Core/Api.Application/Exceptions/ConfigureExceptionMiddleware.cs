@@ -10,7 +10,7 @@ namespace Api.Application.Exceptions
 {
     public static class ConfigureExceptionMiddleware //Extension method'lar yalnızca static sınıflar içinde tanımlanabilir.
     {
-        public static void ConfigureExceptionHandLingMiddleware(this IApplicationBuilder app)
+        public static void ConfigureExceptionHandlingMiddleware(this IApplicationBuilder app)
         {
             app.UseMiddleware<ExceptionMiddleware>(); //static sınıflar generic argüman olarak kullanılamaz.
         }

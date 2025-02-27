@@ -11,8 +11,8 @@ namespace Api.Application.Interfaces.Tokens
 {
     public interface ITokenService
     {
-        Task<JwtSecurityToken> CreateToken(User user, IList<string> roles);
-        string GenerateRefreshToken();
-        ClaimsPrincipal? GetPrincipalFromExpiredToken();
+        Task<JwtSecurityToken> CreateToken(User user, IList<string> roles); //Kullanıcı bilgilerini ve rollerini kullanarak JWT Token oluşturur.
+        string GenerateRefreshToken(); //Kullanıcıya uzun süreli oturumlar sağlamak için Refresh Token üretir.
+        ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token); //Süresi dolmuş (expired) bir JWT'den kullanıcı bilgilerini (claims) çıkarmak.
     }
 }

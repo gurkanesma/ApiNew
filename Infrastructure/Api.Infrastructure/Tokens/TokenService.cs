@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Api.Infrastructure.Tokens
@@ -35,14 +36,14 @@ namespace Api.Infrastructure.Tokens
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenSettings.Secret));
 
             var token = new JwtSecurityToken(
-                issuer: tokenSettings.Issuer,
-                audience: tokenSettings.Audience,
-                expires: DateTime.Now.AddMinutes(tokenSettings.TokenValidityInMunitues),
-                claims: claims,
-                signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
+                issuer: tokenSettings.Issuer, //Token'ı oluşturan sunucu.
+                audience: tokenSettings.Audience, // Token'ı kullanacak olanlar (ör. frontend uygulaması).
+                expires: DateTime.Now.AddMinutes(tokenSettings.TokenValidityInMunitues), // Token'ın geçerlilik süresi.
+                claims: claims, //Kullanıcıya atanmış haklar ve roller.
+                signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256) //oken'ın imzalanması için gerekli güvenlik bilgileri.
                 );
 
-            await userManager.AddClaimsAsync(user, claims);
+            await userManager.AddClaimsAsync(user, claims); //Identity tabanlı uygulamalarda kullanıcının rollerini ve yetkilerini belirlemek için kullanışlıdır.
 
             return token;
 
@@ -51,12 +52,32 @@ namespace Api.Infrastructure.Tokens
 
         public string GenerateRefreshToken()
         {
-            throw new NotImplementedException();
+            var randomNumber = new byte[64];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randomNumber);
+            return Convert.ToBase64String(randomNumber);
         }
 
-        public ClaimsPrincipal? GetPrincipalFromExpiredToken()
+        public ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token)
         {
-            throw new NotImplementedException();
+            TokenValidationParameters tokenValidationParameters = new()
+            {
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenSettings.Secret)),
+                ValidateLifetime = false
+            };
+
+            JwtSecurityTokenHandler tokenHandler = new();
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+            if (securityToken is not JwtSecurityToken jwtSecurityToken
+                || !jwtSecurityToken.Header.Alg
+                .Equals(SecurityAlgorithms.HmacSha256,
+                StringComparison.InvariantCultureIgnoreCase))
+                throw new SecurityTokenException("Token Bulunamadı.");
+
+            return principal;
         }
     }
 }

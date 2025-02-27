@@ -36,12 +36,14 @@ namespace Api.Api.Controller
 
             return Ok();
         }
+        [HttpPut]
         public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
         {
             await mediator.Send(request);
 
             return Ok();
         }
+        [HttpDelete]
         public async Task<IActionResult> DeleteProduct(DeleteProductCommandRequest request)
         {
             await mediator.Send(request);
