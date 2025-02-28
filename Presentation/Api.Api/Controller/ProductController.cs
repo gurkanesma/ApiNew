@@ -4,6 +4,7 @@ using Api.Application.Features.Products.Command.UpdateProduct;
 using Api.Application.Features.Products.Queries.GetAllProducts;
 using Azure.Core;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,12 +21,17 @@ namespace Api.Api.Controller
         }
 
         [HttpGet]
-
+        [Authorize]
         public async Task<IActionResult> GetAllProducts()
         {
             var response = await mediator.Send(new GetAllProductsQueryRequest());
 
-            return Ok();
+            if (response == null || !response.Any())
+            {
+                return NoContent(); // Eğer veri yoksa 204 No Content döndür
+            }
+
+            return Ok(response); // API yanıtında verileri döndür
         }
 
         [HttpPost]

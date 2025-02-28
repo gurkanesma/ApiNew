@@ -11,5 +11,5 @@ namespace Api.Application.Features.Auth.Exceptions
     {
         public UserAlreadyExistException() : base("Böyle bir kullanıcı zaten var!") { }
             
-    }    
+    }
 }
