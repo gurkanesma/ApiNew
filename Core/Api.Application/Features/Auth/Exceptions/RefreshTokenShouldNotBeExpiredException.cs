@@ -7,5 +7,5 @@ namespace Api.Application.Features.Auth.Exceptions
         public RefreshTokenShouldNotBeExpiredException() : base("Oturum süresi sona ermiştir. Lütfen tekrar giriş yapın!") { }
         
     }
-    
+
 }

@@ -26,6 +26,12 @@ namespace Api.Application.Features.Auth.Rules
             if (expiryDate <= DateTime.Now) throw new RefreshTokenShouldNotBeExpiredException();    
             return Task.CompletedTask;  
         }
+
+        public  Task EmailAddressSouldBeValid(User? user)
+        {
+            if (user is null) throw new EmailAddressSouldBeValidException();
+            return Task.CompletedTask;
+        }
     }
 }
 
