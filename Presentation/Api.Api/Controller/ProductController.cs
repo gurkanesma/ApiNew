@@ -1,4 +1,6 @@
-﻿using Api.Application.Features.Products.Command.CreateProduct;
+﻿using Api.Application.Features.Brands.Commands.CreateBrand;
+using Api.Application.Features.Brands.Queries.GetAllBrands;
+using Api.Application.Features.Products.Command.CreateProduct;
 using Api.Application.Features.Products.Command.DeleteProduct;
 using Api.Application.Features.Products.Command.UpdateProduct;
 using Api.Application.Features.Products.Queries.GetAllProducts;
@@ -41,6 +43,20 @@ namespace Api.Api.Controller
             await mediator.Send(request);
 
             return Ok();
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> CreateBrand(CreateBrandCommandRequest request) //normalde burda brand oluşturmayız controller olmalı
+                                                                                        //fakat test verisi ürettiğimiz için böyle yaptım.
+        {
+            await mediator.Send(request);
+
+            return Ok();
+        }
+        public async Task<IActionResult> GetAllBrands()
+        {
+            var response = await mediator.Send(new GetAllBrandsQueryRequest());
+            return Ok(response); // API yanıtında verileri döndür
         }
         [HttpPut]
         public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
