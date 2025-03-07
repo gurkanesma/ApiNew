@@ -9,6 +9,6 @@ namespace Api.Infrastructure.RedisCache
     public class RedisCacheSettings
     {
         public string ConnectionString { get; set; }
-        public int InstanceName { get; set; }
+        public string InstanceName { get; set; }
     }
 }

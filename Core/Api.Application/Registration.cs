@@ -1,5 +1,6 @@
 ﻿using Api.Application.Bases;
 using Api.Application.Behaviors;
+using Api.Application.Beheviors;
 using Api.Application.Exceptions;
 using Api.Application.Features.Products.Rules;
 using FluentValidation;
@@ -27,6 +28,7 @@ namespace Api.Application
             ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RedisCacheBehevior<,>));
         }
 
             private static IServiceCollection AddRulesFromAssemblyContaining(

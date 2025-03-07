@@ -15,4 +15,5 @@ namespace Api.Application.Features.Brands.Queries.GetAllBrands
 
         public double CacheTime => 5;
     }
+    
 }

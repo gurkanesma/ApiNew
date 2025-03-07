@@ -53,6 +53,7 @@ namespace Api.Api.Controller
 
             return Ok();
         }
+        [HttpPost]
         public async Task<IActionResult> GetAllBrands()
         {
             var response = await mediator.Send(new GetAllBrandsQueryRequest());
